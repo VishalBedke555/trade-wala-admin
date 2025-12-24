@@ -1,0 +1,1 @@
+import{j as s}from"./index-GDIqWgRK.js";const o=({isOpen:a,onClose:l,children:e})=>a?s.jsx("div",{className:"modal-overlay",children:s.jsxs("div",{className:"modal-container",children:[s.jsx("button",{className:"close-button",onClick:l,children:s.jsx("span",{className:"bi bi-x-circle"})}),s.jsx("div",{className:"modal-content",children:e})]})}):null;export{o as M};
