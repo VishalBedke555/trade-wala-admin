@@ -1,0 +1,70 @@
+.loginMain{
+    background-color: rgba(0, 0, 0, 0.911);
+    /* background-image: url(../../assets/bg2.jpg); */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
+  
+  .loginOuter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loginInner{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 310px;
+    border-radius: 4px 0px 0px 4px;
+    padding: 25px;
+    background-color: black;
+    margin-top: 7%;
+    /* height: 316px;
+    overflow-y: auto; */
+  }
+  .loginInner .logo{
+      display: flex;
+      justify-content: center;
+      position: relative;
+  }
+  .loginInner dd{
+    margin: 0px 0px 15px 0px;
+    position: relative;
+  }
+  
+  .loginInner input{
+    width: 93%;
+    border: 1px solid var(--primary);
+    padding: 10px;
+    border-radius: 4px;
+  }
+  .loginInner input:focus{
+    border-bottom: 2px solid var(--blue_btns);
+    outline: none;
+  }
+  .loginInner button{
+    width: 100%;
+    background-color: var(--blue_btns);
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .loginImg{
+    margin-top: 10%;
+  }
+  .loginImg img{
+    margin-top: 3px;
+    width: 340px;
+    height: 366px;
+    object-fit: cover;
+    border-radius: 0px 4px 4px 0px;
+  }
+
+  .eyeIcon{
+    position: absolute;
+    right: 3%;
+    top: 10px;
+    font-size: 18px;
+  }

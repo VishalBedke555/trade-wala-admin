@@ -1,0 +1,122 @@
+.drawer-container {
+  display: flex;
+  height: 100vh;
+}
+
+.homeMain {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  transition: all 0.3s ease;
+  height: 100vh;
+  width: 100%;
+}
+
+.homeMain.collapsed .homeDashboard {
+  transform: translateX(-100%);
+}
+.homeMain.collapsed{
+  display: grid;
+  grid-template-columns: 0px 1fr;
+}
+
+.homeDashboard {
+  background-color: black;
+  padding: 14px;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+.homeDashboard::-webkit-scrollbar{
+  display: none;
+}
+
+.homeDashboard .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: gray;
+  margin-top: 25px;
+}
+
+.homeNav {
+  background-color:rgb(27, 27, 27);
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+}
+
+.homeNav span {
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  color: white;
+}
+.homeNav{
+  z-index: 1000;
+}
+
+.compDiv {
+  background-color: rgba(0, 0, 0, 0.713);
+  overflow-y: auto;
+  padding-top: 50px;
+}
+
+.listDiv p {
+  color: var(--blue_btns);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.dashUl {
+  list-style: none;
+  padding: 0;
+}
+
+.dashUl li {
+  display: flex;
+  align-items: center;
+  padding: 12px 8px;
+  margin: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dashUl li.active,
+.dashUl li:hover {
+  background-color: rgba(128, 128, 128, 0.388);
+  border-radius: 4px;
+}
+
+.dashUl li span {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 700px) {
+  .homeMain {
+    grid-template-columns: 1fr;
+  }
+
+  .homeMain.collapsed {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .homeMain.collapsed .homeDashboard {
+    transform: translateX(-100%);
+  }
+
+  .homeMain .homeDashboard {
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    z-index: 999;
+    background-color: black;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+  }
+
+  .compDiv {
+    overflow-y: auto;
+  }
+}

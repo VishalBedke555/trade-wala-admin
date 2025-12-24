@@ -1,0 +1,215 @@
+.deleteBox {
+    border: 1px solid #ececec;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: red;
+    box-shadow: rgba(121, 120, 120, 0.25) 0px 30px 60px -12px inset, rgba(216, 34, 34, 0.3) 0px 18px 36px -18px inset;
+    cursor: pointer;
+}
+
+.update-btn {
+    cursor: pointer;
+    background-color: var(--blue_btns);
+    margin: 6px 12px;
+    padding: 6px 10px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 4px; 
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.horizontal-spacer {
+    text-align: center;
+}
+
+.buttons-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; 
+}
+
+.quiz-container {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 0px 0.5px;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.option-container {
+    display: flex;
+    width: 100%; 
+    justify-content: center;
+    align-items: center; 
+    /* margin-bottom: 10px; */
+}
+
+.service-input {
+    border: 1px solid var(--primary);
+    padding: 10px;
+    border-radius: 4px;
+    width: 70%;
+    box-sizing: border-box; 
+}
+
+.service-input:focus {
+    border-bottom: 2px solid var(--blue_btns);
+    outline: none;
+}
+
+.type-container {
+    display: flex;
+    align-items: center;
+    width: 94%;
+    padding: 8px;
+    justify-content: space-between;
+}
+
+.select-input {
+    padding: 8px;
+    margin-left: 4px;
+    width: 15%;
+    border-color: #D2D2D2;
+    box-sizing: border-box; 
+}
+
+.main-quiz-form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 80%;
+    justify-content: center;
+    align-items: center; 
+}
+
+.option-input {
+    padding: 10px;
+    width: 64%;
+    margin: 4px 0px; 
+    box-sizing: border-box; 
+}
+
+.preview-box {
+    width: 500px;
+    padding: 20px;
+    background-color: white;
+    height: 82vh;
+    border-radius: 4px;  
+    overflow: auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px; 
+}
+
+@media screen and (max-width: 600px) {
+    .preview-box {
+        width: 95%;
+    }
+
+    .type-container {
+        flex-direction: column;
+        align-items: flex-start;
+        line-height: 30px;
+    }
+
+    .option-input {
+        width: 80%; 
+    }
+
+    .select-input {
+        width: 40%;
+    }
+
+    .main-quiz-form {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .buttons-div {
+        flex-direction: column; 
+    }
+}
+
+
+.preview-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.preview-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
+.close-button{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    /* padding: 0.45rem 0.5rem; */
+    /* border-radius: 50%; */
+}
+
+.close-button span{
+    color: var(--text-secondery);
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.close-button span:hover{
+    color: var(--blue_btns);
+    transition: 0.4s;
+}
+
+.preview-content h2 {
+    margin-bottom: 1rem;
+}
+
+.preview-content button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.preview-content button:hover {
+    background-color: white;
+    color: #007bff;
+    transition: 0.4s;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0rem;
+    border: 1px solid #ced4da;
+    padding: 0px 4px;
+}
+.radio-option input[type="text"]{
+    padding: 14px 4px;
+}
+
+.radio-option input[type="radio"],
+.radio-option input[type="checkbox"] {
+    margin-right: 0.5rem;
+}

@@ -1,0 +1,139 @@
+:root {
+    --primary-color: #ffc200;
+    --secondary-color: #ff6b00;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --text-primary: #343a40;
+    --text-secondary: #6c757d;
+    --highlight-color: #28a745;
+  }
+  
+  .statistics-container {
+    padding: 30px;
+    border-radius: 12px;
+    background: black;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .statistics-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.885);
+    font-weight: bold;
+  }
+  
+  .statistics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  
+  .statistics-card {
+    padding: 20px;
+    margin-top: 12px;
+    border-radius: 12px;
+    background:black;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.23);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .statistics-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(130, 129, 129, 0.2);
+  }
+  
+  .statistics-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .statistics-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--highlight-color);
+  }
+  
+  .orders-card {
+    text-align: left;
+  }
+  
+  .orders-details {
+    display: grid;
+    gap: 15px;
+  }
+  
+  .order-summary-box {
+    padding: 15px;
+    border-radius: 8px;
+    background: black;
+    box-shadow: 0 4px 8px rgba(205, 204, 204, 0.454);
+    text-align: center;
+    /* font-size: 1rem; */
+  }
+  
+  .large-box {
+    grid-column: span 2;
+  }
+  
+  .small-box {
+    grid-column: span 1;
+  }
+  
+  .orders-details p {
+    margin: 8px 0;
+    color:white;
+    font-size: 18px;
+  }
+  
+  .orders-details span {
+    font-weight: bold;
+    color: white;
+  }
+  
+  .date-picker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 15px;
+  }
+  
+  .date-picker label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .date-input {
+    padding: 10px 14px;
+    border: 1px solid var(--text-secondary);
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .date-input:focus {
+    border-color: var(--highlight-color);
+    box-shadow: 0 0 6px var(--highlight-color);
+  }
+  
+  @media (max-width: 768px) {
+    .statistics-title {
+      font-size: 1.5rem;
+    }
+  
+    .statistics-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .order-summary-box {
+      font-size: 0.9rem;
+    }
+  }
+  

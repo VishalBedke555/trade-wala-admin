@@ -1,0 +1,97 @@
+/* General table styling */
+.deliveriesTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.deliveriesTable th, .deliveriesTable td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.deliveriesTable th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.deliveryTableWrapper {
+    overflow-x: auto;
+}
+
+.toll-details img {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.toll-details p {
+    display: inline-block;
+    margin: 5px 0;
+}
+
+/* Pagination Styling */
+.pagination {
+    display: flex;
+    /* justify-content: center; */
+    padding: 10px;
+}
+
+.pagination .active {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.pagination .unactive {
+    color: #ccc;
+}
+
+.pagination .margin-16 {
+    margin-top: 16px;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 20px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 19px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--success);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.timeline-dot {
+    width: 18px;
+    height: 18px;
+    background-color:var(--success);
+    border-radius: 50%;
+    position: absolute;
+    left: -8px; 
+    color: white;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeline-text {
+    margin-left: 15px;
+    font-size: 14px;
+    color: #333;
+}
