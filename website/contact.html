@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Trade-Wala - Construction Material Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Page Content */
+        .page-content {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 25px auto 0;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Container */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.03) 0%, rgba(245, 158, 11, 0.02) 100%);
+            padding: 40px;
+            border-radius: var(--border-radius);
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .contact-details p {
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+
+        .business-hours {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-top: 30px;
+        }
+
+        .business-hours h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hours-list .day {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .hours-list .time {
+            color: var(--gray);
+        }
+
+        /* Contact Form */
+        .contact-form-container {
+            background-color: var(--light);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(30, 58, 138, 0.4);
+        }
+
+        /* Map Section */
+        .map-container {
+            margin-top: 80px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-large);
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .map-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            margin-top: 80px;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background-color: var(--light);
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background-color: rgba(30, 58, 138, 0.05);
+        }
+
+        .faq-question h3 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin: 0;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 25px 25px;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* Support Channels */
+        .support-channels {
+            margin-top: 80px;
+        }
+
+        .channels-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .channel-card {
+            background-color: var(--light);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .channel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-large);
+        }
+
+        .channel-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--white);
+        }
+
+        .channel-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .channel-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="nav-container">
+                <a href="index.html" class="logo">
+                    <img src="./assets/logo.png" height="80px" alt="Trade-Wala Logo">
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html" class="active">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="delete-account.html">Delete Account</a></li>
+                </ul>
+
+                <div class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container fade-in">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team for support, inquiries, or partnership opportunities. We're here to help you
+                with all your construction material management needs.</p>
+        </div>
+    </section>
+
+    <!-- Contact Page Content -->
+    <section class="page-content">
+        <div class="container">
+            <!-- Contact Information & Form -->
+            <div class="section-title fade-in">
+                <h2>Get In Touch</h2>
+                <p>Reach out to us through any of these channels. Our team is ready to assist you.</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <div id="contactPageInfo">
+                        <!-- Content will be loaded from JavaScript -->
+                        <div class="loading-contact">
+                            <i class="fas fa-spinner fa-spin"></i> Loading contact information...
+                        </div>
+                    </div>
+
+                    <div class="business-hours">
+                        <h3>Business Hours</h3>
+                        <ul class="hours-list">
+                            <li>
+                                <span class="day">Monday - Friday</span>
+                                <span class="time">9:00 AM - 7:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Saturday</span>
+                                <span class="time">10:00 AM - 5:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Sunday</span>
+                                <span class="time">Emergency Support Only</span>
+                            </li>
+                            <li>
+                                <span class="day">Holidays</span>
+                                <span class="time">As per government notifications</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contact-form-container fade-in">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 40px;">Send Message</h2>
+
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" class="form-control" required
+                                placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" required
+                                placeholder="Enter your email address">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="">Select a subject</option>
+                                <option value="support">Technical Support</option>
+                                <option value="dealer">Dealer Inquiry</option>
+                                <option value="user">User Account Issue</option>
+                                <option value="partnership">Business Partnership</option>
+                                <option value="feedback">Feedback & Suggestions</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" class="form-control" required
+                                placeholder="Enter your message here..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-container fade-in">
+                <div class="map-placeholder">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4288.880641458868!2d75.365767!3d19.901242099999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba3002e51cf5f%3A0x52e2696a2421fce6!2sMete%20plywood!5e1!3m2!1sen!2sin!4v1767363994203!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!-- Support Channels -->
+            <!-- <div class="support-channels fade-in">
+                <div class="section-title">
+                    <h2>Support Channels</h2>
+                    <p>Choose the most convenient way to get help from our team</p>
+                </div>
+                
+                <div class="channels-container">
+                    <div class="channel-card">
+                        <div class="channel-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Live Chat Support</h3>
+                        <p>Get instant answers through our in-app live chat. Available during business hours.</p>
+                        <p style="color: var(--primary); font-weight: 600;">Response Time: Instant</p>
+                    </div>
+                    
+                    <div class="channel-card">
+                        <div class="channel-icon">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <h3>Email Support</h3>
+                        <p>Send detailed queries via email. Our team responds within 24 hours.</p>
+                        <p style="color: var(--primary); font-weight: 600;">Response Time: 24 hours</p>
+                    </div>
+                    
+                    <div class="channel-card">
+                        <div class="channel-icon">
+                            <i class="fas fa-phone-volume"></i>
+                        </div>
+                        <h3>Phone Support</h3>
+                        <p>Call us for urgent matters or complex issues requiring immediate attention.</p>
+                        <p style="color: var(--primary); font-weight: 600;">Response Time: Immediate</p>
+                    </div>
+                    
+                    <div class="channel-card">
+                        <div class="channel-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Community Forum</h3>
+                        <p>Join our dealer and user community to share experiences and solutions.</p>
+                        <p style="color: var(--primary); font-weight: 600;">Active Community</p>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- FAQ Section -->
+            <div class="faq-container fade-in">
+                <div class="section-title">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Quick answers to common questions about Trade-Wala</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I become a verified dealer on Trade-Wala?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To become a verified dealer, visit our website and click on "Register as Dealer". You'll need
+                            to submit your business registration documents, GST certificate, address proof, and bank
+                            details. Our verification team will review your application within 3-5 business days. Once
+                            approved, you'll gain access to the dealer dashboard where you can start listing products.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What types of construction materials can I find on Trade-Wala?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Trade-Wala features a comprehensive range of construction materials including:</p>
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li>Cement & Aggregates (OPC, PPC, RMC, Sand, Aggregates)</li>
+                            <li>Steel & Reinforcement (TMT Bars, Structural Steel, Wire Mesh)</li>
+                            <li>Bricks, Blocks & Tiles (Clay Bricks, AAC Blocks, Floor Tiles, Wall Tiles)</li>
+                            <li>Plumbing & Electrical Materials (Pipes, Fittings, Wires, Switches)</li>
+                            <li>Tools & Safety Equipment (Power Tools, Hand Tools, Safety Gear)</li>
+                            <li>Paints & Finishes (Interior, Exterior, Primers, Sealants)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I track my order?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Once your order is confirmed and shipped, you'll receive a tracking number via SMS and email.
+                            You can track your order in real-time through the "My Orders" section in the Trade-Wala app
+                            or website. For dealer-to-dealer bulk orders, you'll also receive regular updates on
+                            dispatch and estimated delivery times through your dealer dashboard.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is your return policy for defective materials?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept returns within 7 days of delivery for damaged or incorrect items. Please contact
+                            our support team with your order number and photos/videos of the issue. Our quality team
+                            will verify the complaint and initiate the return process. Return shipping is free for
+                            damaged/incorrect items. For quality disputes, we may send a representative to inspect the
+                            materials at your site.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How are payments processed and secured?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Trade-Wala uses industry-leading payment gateways with 256-bit SSL encryption to ensure
+                            secure transactions. We support multiple payment methods including credit/debit cards, net
+                            banking, UPI, and wallet payments. For large dealer transactions, we also offer secure bank
+                            transfer options with payment protection. All payment information is encrypted and never
+                            stored on our servers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Trade-<span>Wala</span></div>
+                    <p>Construction material management platform connecting dealers and users for seamless transactions
+                        and efficient inventory management.</p>
+
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="delete-account.html">Delete Account</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <div id="footerContact">
+                        <!-- Content will be loaded from JavaScript -->
+                        <p><i class="fas fa-spinner fa-spin"></i> Loading contact info...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 Trade-Wala. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./script.js"></script>
+    <script src="./global.js"></script>
+</body>
+
+</html>

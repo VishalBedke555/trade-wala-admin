@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "trade-wala-b71d8"
-  }
+  },
+  "targets": {
+    "trade-wala-b71d8": {
+      "hosting": {
+        "admin": [
+          "trade-wala-b71d8"
+        ],
+        "website": [
+          "etrade-wala"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

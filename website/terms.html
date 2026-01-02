@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions | Trade-Wala</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* INNER CONTENT STYLES ONLY - Add these to your existing CSS */
+
+
+
+        /* Terms Content */
+        .page-content {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        /* Content Container */
+        .terms-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Terms Content Box */
+        .terms-content {
+            background-color: var(--light);
+            padding: 60px 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        /* Update Date */
+        .update-date {
+            text-align: right;
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Main Title */
+        .terms-content h1 {
+            color: var(--primary);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-gray);
+            font-size: 2.2rem;
+        }
+
+        /* Section Headings */
+        .terms-content h2 {
+            color: var(--primary);
+            margin: 40px 0 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(30, 58, 138, 0.1);
+            font-size: 1.8rem;
+            position: relative;
+        }
+
+        .terms-content h2:before {
+            content: '';
+            position: absolute;
+            left: -28px;
+            bottom: 54px;
+            width: 0px;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+
+        /* Sub Headings */
+        .terms-content h3 {
+            color: var(--secondary);
+            margin: 30px 0 15px;
+            font-size: 1.4rem;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .terms-content h3:before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0px;
+            height: 0px;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        /* Paragraphs */
+        .terms-content p {
+            margin-bottom: 20px;
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* Lists */
+        .terms-content ul,
+        .terms-content ol {
+            padding-left: 25px;
+            margin-bottom: 25px;
+        }
+
+        .terms-content li {
+            margin-bottom: 12px;
+            color: var(--gray);
+            line-height: 1.7;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .terms-content li:before {
+            content: '•';
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: -10px;
+        }
+
+        .terms-content ol li {
+            counter-increment: item;
+            padding-left: 20px;
+        }
+
+        .terms-content ol li:before {
+            content: counter(item) '.';
+            color: var(--primary);
+            font-weight: bold;
+            left: 0;
+        }
+
+        /* Strong Text */
+        .terms-content strong {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        /* Emphasis */
+        .terms-content em {
+            color: var(--dark-gray);
+            font-style: italic;
+        }
+
+        /* Information Boxes */
+        .important-box {
+            background-color: rgba(30, 58, 138, 0.08);
+            border-left: 4px solid var(--primary);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: var(--border-radius);
+        }
+
+        .important-box h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .warning-box {
+            background-color: rgba(245, 158, 11, 0.08);
+            border-left: 4px solid var(--secondary);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: var(--border-radius);
+        }
+
+        .warning-box h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .notice-box {
+            background-color: rgba(16, 185, 129, 0.08);
+            border-left: 4px solid var(--accent);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: var(--border-radius);
+        }
+
+        .notice-box h4 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Definition Lists */
+        .definition-list {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: var(--shadow);
+        }
+
+        .definition-list dt {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .definition-list dd {
+            color: var(--gray);
+            margin-bottom: 20px;
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+
+        .definition-list dd:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Table Styling */
+        .terms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .terms-table th {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: left;
+            padding: 15px;
+            font-weight: 600;
+        }
+
+        .terms-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--light-gray);
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .terms-table tr:nth-child(even) {
+            background-color: rgba(30, 58, 138, 0.03);
+        }
+
+        .terms-table tr:hover {
+            background-color: rgba(30, 58, 138, 0.05);
+        }
+
+        /* Clause Numbering */
+        .clause {
+            counter-reset: subclause;
+            margin-bottom: 30px;
+        }
+
+        .clause h2 {
+            counter-increment: clause;
+            counter-reset: subclause;
+        }
+
+        .clause h2:before {
+            content: counter(clause) '. ';
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .clause h3 {
+            counter-increment: subclause;
+            counter-reset: sub-subclause;
+        }
+
+        .clause h3:before {
+            content: counter(clause) '.' counter(subclause) '. ';
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Quick Navigation */
+        .terms-nav {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .terms-nav h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .terms-nav ul {
+            list-style: none;
+            padding-left: 0;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .terms-nav li {
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .terms-nav a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: var(--border-radius);
+        }
+
+        .terms-nav a:hover {
+            color: var(--primary);
+            background-color: rgba(30, 58, 138, 0.05);
+        }
+
+        .terms-nav a.active {
+            color: var(--primary);
+            background-color: rgba(30, 58, 138, 0.08);
+            font-weight: 600;
+        }
+
+        .terms-nav a i {
+            font-size: 0.9rem;
+            color: var(--primary-light);
+        }
+
+        /* Agreement Checkbox */
+        .agreement-check {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-top: 40px;
+            text-align: center;
+            border-top: 4px solid var(--primary);
+        }
+
+        .agreement-check label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            color: var(--dark);
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .agreement-check input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--primary);
+        }
+
+        /* Accept Button */
+        .accept-btn {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            border: none;
+            padding: 15px 40px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .accept-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-large);
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+        }
+
+        .accept-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Print Button */
+        .print-terms {
+            background-color: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: 20px;
+        }
+
+        .print-terms:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+
+            .terms-content {
+                padding: 40px 30px;
+            }
+
+            .terms-nav {
+                position: static;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.3rem;
+            }
+
+            .terms-content {
+                padding: 30px 20px;
+            }
+
+            .terms-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .terms-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .terms-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .agreement-check {
+                padding: 20px;
+            }
+
+            .accept-btn,
+            .print-terms {
+                width: 100%;
+                margin: 10px 0;
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            33% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+
+            66% {
+                transform: translateY(10px) rotate(-5deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="nav-container">
+                <a href="index.html" class="logo">
+                    <img src="./assets/logo.png" height="80px" alt="Trade-Wala Logo">
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html" class="active">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="delete-account.html">Delete Account</a></li>
+                </ul>
+
+                <div class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="header-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container fade-in">
+            <h1>Terms & Conditions</h1>
+            <p>Please read these terms carefully before using Trade-Wala services. These terms govern your use of our
+                platform.</p>
+        </div>
+    </section>
+
+    <!-- Page Content -->
+    <section class="page-content">
+        <div class="container">
+            <div class="terms-container">
+                <!-- Quick Navigation -->
+                <div class="terms-nav fade-in">
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#acceptance"><i class="fas fa-chevron-right"></i> Acceptance of Terms</a></li>
+                        <li><a href="#definitions"><i class="fas fa-chevron-right"></i> Definitions</a></li>
+                        <li><a href="#account"><i class="fas fa-chevron-right"></i> Account Registration</a></li>
+                        <li><a href="#user-responsibilities"><i class="fas fa-chevron-right"></i> User
+                                Responsibilities</a></li>
+                        <li><a href="#dealer-responsibilities"><i class="fas fa-chevron-right"></i> Dealer
+                                Responsibilities</a></li>
+                        <li><a href="#transactions"><i class="fas fa-chevron-right"></i> Transactions & Payments</a>
+                        </li>
+                        <li><a href="#intellectual-property"><i class="fas fa-chevron-right"></i> Intellectual
+                                Property</a></li>
+                        <li><a href="#prohibited"><i class="fas fa-chevron-right"></i> Prohibited Activities</a></li>
+                        <li><a href="#termination"><i class="fas fa-chevron-right"></i> Termination</a></li>
+                        <li><a href="#liability"><i class="fas fa-chevron-right"></i> Limitation of Liability</a></li>
+                        <li><a href="#governing-law"><i class="fas fa-chevron-right"></i> Governing Law</a></li>
+                        <li><a href="#changes"><i class="fas fa-chevron-right"></i> Changes to Terms</a></li>
+                    </ul>
+                </div>
+
+                <!-- Terms Content -->
+                <div class="terms-content fade-in">
+                    <div class="update-date">
+                        Last Updated: November 15, 2023 | Effective Date: November 15, 2023
+                    </div>
+
+                    <h1>Trade-Wala Terms and Conditions</h1>
+
+                    <div class="warning-box">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Important Notice</h4>
+                        <p>By accessing or using Trade-Wala's mobile application, website, or services (collectively,
+                            the "Services"), you agree to be bound by these Terms and Conditions. If you do not agree to
+                            these Terms, you may not access or use our Services. These Terms constitute a legally
+                            binding agreement between you and Trade-Wala Pvt. Ltd.</p>
+                    </div>
+
+                    <!-- Clause 1: Acceptance -->
+                    <div class="clause" id="acceptance">
+                        <h2>Acceptance of Terms</h2>
+                        <p>These Terms and Conditions ("Terms") govern your access to and use of the Trade-Wala
+                            platform, including any content, functionality, and services offered on or through our
+                            mobile application and website.</p>
+
+                        <div class="important-box">
+                            <h4><i class="fas fa-check-circle"></i> Your Agreement</h4>
+                            <p>By registering for an account, downloading our mobile application, or using any of our
+                                Services, you acknowledge that you have read, understood, and agree to be bound by these
+                                Terms. If you are using our Services on behalf of a company or other legal entity, you
+                                represent that you have the authority to bind such entity to these Terms.</p>
+                        </div>
+
+                        <h3>Modification of Terms</h3>
+                        <p>We reserve the right to modify these Terms at any time. We will provide notice of material
+                            changes by posting the updated Terms on this page and updating the "Last Updated" date. Your
+                            continued use of the Services after such changes constitutes your acceptance of the new
+                            Terms.</p>
+                    </div>
+
+                    <!-- Clause 2: Definitions -->
+                    <div class="clause" id="definitions">
+                        <h2>Definitions</h2>
+                        <p>For the purpose of these Terms, the following definitions apply:</p>
+
+                        <div class="definition-list">
+                            <dl>
+                                <dt>"Platform" or "Services"</dt>
+                                <dd>Refers to the Trade-Wala mobile application, website, and all associated services,
+                                    features, content, and functionality.</dd>
+
+                                <dt>"User"</dt>
+                                <dd>Any individual or entity that registers for an account to purchase construction
+                                    materials through the Platform.</dd>
+
+                                <dt>"Dealer"</dt>
+                                <dd>A business entity registered on the Platform to sell construction materials to
+                                    Users.</dd>
+
+                                <dt>"Content"</dt>
+                                <dd>All text, graphics, images, music, software, audio, video, information, or other
+                                    materials available through the Platform.</dd>
+
+                                <dt>"Transaction"</dt>
+                                <dd>A purchase or sale of construction materials through the Platform between a User and
+                                    a Dealer.</dd>
+
+                                <dt>"Commission"</dt>
+                                <dd>The fee charged by Trade-Wala on completed transactions, payable by the Dealer.</dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <!-- Clause 3: Account -->
+                    <div class="clause" id="account">
+                        <h2>Account Registration and Security</h2>
+
+                        <h3>Eligibility</h3>
+                        <p>To use our Services, you must:</p>
+                        <ul>
+                            <li>Be at least 18 years of age</li>
+                            <li>Have the legal capacity to enter into binding contracts</li>
+                            <li>Provide accurate and complete registration information</li>
+                            <li>Maintain the security of your account credentials</li>
+                            <li>Comply with all applicable laws and regulations</li>
+                        </ul>
+
+                        <h3>Account Responsibilities</h3>
+                        <p>You are responsible for:</p>
+                        <ul>
+                            <li>All activities that occur under your account</li>
+                            <li>Maintaining the confidentiality of your password</li>
+                            <li>Promptly updating your account information</li>
+                            <li>Notifying us immediately of any unauthorized use</li>
+                            <li>Ensuring that your account information is accurate</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><i class="fas fa-user-shield"></i> Security Notice</h4>
+                            <p>You must not share your account credentials with any third party. You are solely
+                                responsible for any loss or damage arising from unauthorized use of your account.
+                                Trade-Wala will not be liable for any losses caused by unauthorized account access.</p>
+                        </div>
+                    </div>
+
+                    <!-- Clause 4: User Responsibilities -->
+                    <div class="clause" id="user-responsibilities">
+                        <h2>User Responsibilities</h2>
+
+                        <p>As a User of Trade-Wala, you agree to:</p>
+
+                        <div class="notice-box">
+                            <h4><i class="fas fa-user-check"></i> User Obligations</h4>
+                            <ul>
+                                <li>Use the Platform only for lawful purposes</li>
+                                <li>Provide accurate information for all transactions</li>
+                                <li>Make payments for purchases in a timely manner</li>
+                                <li>Not engage in fraudulent activities</li>
+                                <li>Respect intellectual property rights</li>
+                                <li>Comply with all applicable laws and regulations</li>
+                            </ul>
+                        </div>
+
+                        <h3>Order and Payment</h3>
+                        <p>Users agree to:</p>
+                        <ul>
+                            <li>Pay the listed price plus applicable taxes and delivery charges</li>
+                            <li>Provide accurate delivery address and contact information</li>
+                            <li>Inspect delivered materials upon receipt</li>
+                            <li>Report any discrepancies within 24 hours of delivery</li>
+                            <li>Follow the return and refund policy for damaged goods</li>
+                        </ul>
+
+                        <h3>User Conduct</h3>
+                        <p>Users must not:</p>
+                        <ul>
+                            <li>Harass, threaten, or intimidate Dealers or other Users</li>
+                            <li>Submit false reviews or ratings</li>
+                            <li>Attempt to circumvent the Platform's security measures</li>
+                            <li>Use the Platform to compete with Trade-Wala</li>
+                            <li>Reverse engineer or decompile the Platform</li>
+                        </ul>
+                    </div>
+
+                    <!-- Clause 5: Dealer Responsibilities -->
+                    <div class="clause" id="dealer-responsibilities">
+                        <h2>Dealer Responsibilities</h2>
+
+                        <h3>Registration and Verification</h3>
+                        <p>Dealers must:</p>
+                        <ul>
+                            <li>Provide accurate business information and documentation</li>
+                            <li>Submit valid GST registration certificate</li>
+                            <li>Provide business registration documents</li>
+                            <li>Verify bank account details for payments</li>
+                            <li>Maintain accurate contact information</li>
+                        </ul>
+
+                        <h3>Product Listings</h3>
+                        <p>Dealers are responsible for:</p>
+                        <ul>
+                            <li>Accurate product descriptions and specifications</li>
+                            <li>Correct pricing information</li>
+                            <li>Current stock availability</li>
+                            <li>Quality standards as per industry norms</li>
+                            <li>Compliance with applicable standards and regulations</li>
+                        </ul>
+
+                        <div class="important-box">
+                            <h4><i class="fas fa-balance-scale"></i> Dealer Obligations</h4>
+                            <p>Dealers act as independent sellers on the Platform. Trade-Wala acts as an intermediary
+                                and is not a party to transactions between Users and Dealers. Dealers are solely
+                                responsible for:</p>
+                            <ul>
+                                <li>Product quality and specifications</li>
+                                <li>Order fulfillment and delivery</li>
+                                <li>Customer service and support</li>
+                                <li>Returns and refunds</li>
+                                <li>Payment of applicable taxes</li>
+                            </ul>
+                        </div>
+
+                        <h3>Commission and Fees</h3>
+                        <p>Dealers agree to pay Trade-Wala a commission on completed transactions as per the current fee
+                            structure. Commission rates may vary based on product category and transaction volume.</p>
+                    </div>
+
+                    <!-- Clause 6: Transactions -->
+                    <div class="clause" id="transactions">
+                        <h2>Transactions and Payments</h2>
+
+                        <h3>Order Process</h3>
+                        <p>The transaction process includes:</p>
+                        <ol>
+                            <li>User selects products and places order</li>
+                            <li>Dealer confirms order and stock availability</li>
+                            <li>User makes payment through secure payment gateway</li>
+                            <li>Dealer processes and ships the order</li>
+                            <li>User receives and inspects the delivery</li>
+                            <li>Transaction is marked as completed</li>
+                        </ol>
+
+                        <h3>Payment Terms</h3>
+                        <table class="terms-table">
+                            <thead>
+                                <tr>
+                                    <th>Payment Method</th>
+                                    <th>Processing Time</th>
+                                    <th>Security</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Credit/Debit Cards</td>
+                                    <td>Instant</td>
+                                    <td>PCI-DSS Compliant</td>
+                                </tr>
+                                <tr>
+                                    <td>Net Banking</td>
+                                    <td>Instant to 24 hours</td>
+                                    <td>Bank-level Security</td>
+                                </tr>
+                                <tr>
+                                    <td>UPI</td>
+                                    <td>Instant</td>
+                                    <td>NPCI Certified</td>
+                                </tr>
+                                <tr>
+                                    <td>Wallet Payments</td>
+                                    <td>Instant</td>
+                                    <td>Tokenized Security</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="warning-box">
+                            <h4><i class="fas fa-money-bill-wave"></i> Payment Security</h4>
+                            <p>All payments are processed through secure third-party payment gateways. Trade-Wala does
+                                not store complete credit card information on its servers. Users are responsible for
+                                ensuring they have sufficient funds for transactions.</p>
+                        </div>
+
+                        <h3>Refunds and Returns</h3>
+                        <p>Refund policies include:</p>
+                        <ul>
+                            <li>Damaged goods: 100% refund within 7 days</li>
+                            <li>Incorrect items: Replacement or refund within 7 days</li>
+                            <li>Cancellation before shipping: 100% refund</li>
+                            <li>Cancellation after shipping: Subject to delivery charges</li>
+                            <li>Quality disputes: Resolution within 14 days</li>
+                        </ul>
+                    </div>
+
+                    <!-- Clause 7: Intellectual Property -->
+                    <div class="clause" id="intellectual-property">
+                        <h2>Intellectual Property Rights</h2>
+
+                        <h3>Platform Ownership</h3>
+                        <p>Trade-Wala owns all intellectual property rights in the Platform, including but not limited
+                            to:</p>
+                        <ul>
+                            <li>Software code and algorithms</li>
+                            <li>User interface design</li>
+                            <li>Trademarks and logos</li>
+                            <li>Proprietary technology</li>
+                            <li>Database structure and content</li>
+                        </ul>
+
+                        <h3>User Content</h3>
+                        <p>By submitting content to the Platform, you grant Trade-Wala a worldwide, non-exclusive,
+                            royalty-free license to use, reproduce, modify, and display such content for the purpose of
+                            providing the Services.</p>
+
+                        <div class="notice-box">
+                            <h4><i class="fas fa-copyright"></i> Copyright Notice</h4>
+                            <p>All content on the Platform is protected by copyright laws. You may not reproduce,
+                                distribute, or create derivative works without our express written permission.
+                                Unauthorized use may result in legal action.</p>
+                        </div>
+                    </div>
+
+                    <!-- Clause 8: Prohibited Activities -->
+                    <div class="clause" id="prohibited">
+                        <h2>Prohibited Activities</h2>
+
+                        <p>You agree not to engage in any of the following prohibited activities:</p>
+
+                        <div class="warning-box">
+                            <h4><i class="fas fa-ban"></i> Strictly Prohibited</h4>
+                            <ul>
+                                <li>Using the Platform for any illegal purpose</li>
+                                <li>Violating any laws or regulations</li>
+                                <li>Infringing upon intellectual property rights</li>
+                                <li>Harassing, abusing, or harming others</li>
+                                <li>Submitting false or misleading information</li>
+                                <li>Interfering with Platform security</li>
+                                <li>Attempting unauthorized access</li>
+                                <li>Using the Platform to compete with Trade-Wala</li>
+                            </ul>
+                        </div>
+
+                        <h3>Commercial Restrictions</h3>
+                        <p>Users and Dealers must not:</p>
+                        <ul>
+                            <li>Use the Platform to solicit business outside the Platform</li>
+                            <li>Share contact information for off-platform transactions</li>
+                            <li>Undercut Platform pricing in direct deals</li>
+                            <li>Use Platform data for competitive analysis</li>
+                        </ul>
+                    </div>
+
+                    <!-- Clause 9: Termination -->
+                    <div class="clause" id="termination">
+                        <h2>Termination and Suspension</h2>
+
+                        <h3>By Trade-Wala</h3>
+                        <p>We may terminate or suspend your account immediately, without prior notice or liability, for
+                            any reason, including but not limited to:</p>
+                        <ul>
+                            <li>Breach of these Terms</li>
+                            <li>Suspected fraudulent activity</li>
+                            <li>Violation of applicable laws</li>
+                            <li>Non-payment of fees (for Dealers)</li>
+                            <li>Repeated customer complaints</li>
+                        </ul>
+
+                        <h3>By User/Dealer</h3>
+                        <p>You may terminate your account at any time by following the account deletion process in the
+                            app or contacting customer support.</p>
+
+                        <h3>Effect of Termination</h3>
+                        <p>Upon termination:</p>
+                        <ul>
+                            <li>Your right to use the Services will immediately cease</li>
+                            <li>All outstanding payments become due immediately</li>
+                            <li>We may delete your account information</li>
+                            <li>You remain liable for all obligations incurred before termination</li>
+                        </ul>
+                    </div>
+
+                    <!-- Clause 10: Liability -->
+                    <div class="clause" id="liability">
+                        <h2>Limitation of Liability</h2>
+
+                        <div class="important-box">
+                            <h4><i class="fas fa-scale-balanced"></i> Important Disclaimer</h4>
+                            <p>To the maximum extent permitted by law, Trade-Wala shall not be liable for any indirect,
+                                incidental, special, consequential, or punitive damages, including but not limited to:
+                            </p>
+                            <ul>
+                                <li>Loss of profits</li>
+                                <li>Loss of data</li>
+                                <li>Business interruption</li>
+                                <li>Personal injury</li>
+                                <li>Property damage</li>
+                            </ul>
+                        </div>
+
+                        <h3>Maximum Liability</h3>
+                        <p>In no event shall Trade-Wala's total liability to you for all claims exceed the greater of:
+                        </p>
+                        <ul>
+                            <li>The amount paid by you to Trade-Wala in the last 12 months, or</li>
+                            <li>₹5,000 (Indian Rupees Five Thousand Only)</li>
+                        </ul>
+
+                        <h3>Indemnification</h3>
+                        <p>You agree to defend, indemnify, and hold harmless Trade-Wala from any claims, damages,
+                            obligations, losses, liabilities, costs, or debt arising from:</p>
+                        <ul>
+                            <li>Your use of the Services</li>
+                            <li>Your violation of these Terms</li>
+                            <li>Your violation of any third-party rights</li>
+                            <li>Any content you submit to the Platform</li>
+                        </ul>
+                    </div>
+
+                    <!-- Clause 11: Governing Law -->
+                    <div class="clause" id="governing-law">
+                        <h2>Governing Law and Dispute Resolution</h2>
+
+                        <h3>Governing Law</h3>
+                        <p>These Terms shall be governed by and construed in accordance with the laws of India, without
+                            regard to its conflict of law provisions.</p>
+
+                        <h3>Dispute Resolution</h3>
+                        <p>Any disputes arising from these Terms shall be resolved through the following process:</p>
+                        <ol>
+                            <li>Informal negotiation between parties (30 days)</li>
+                            <li>Mediation through a mutually agreed mediator</li>
+                            <li>Arbitration in Mumbai, India under Arbitration and Conciliation Act, 1996</li>
+                        </ol>
+
+                        <div class="notice-box">
+                            <h4><i class="fas fa-gavel"></i> Arbitration Agreement</h4>
+                            <p>By agreeing to these Terms, you agree to resolve any disputes through binding arbitration
+                                rather than in court. Arbitration is more informal than litigation and uses a neutral
+                                arbitrator instead of a judge or jury.</p>
+                        </div>
+
+                        <h3>Jurisdiction</h3>
+                        <p>The courts in Mumbai, Maharashtra shall have exclusive jurisdiction over any matters not
+                            subject to arbitration.</p>
+                    </div>
+
+                    <!-- Clause 12: Changes -->
+                    <div class="clause" id="changes">
+                        <h2>Changes to Terms</h2>
+
+                        <h3>Modification Rights</h3>
+                        <p>We reserve the right to modify these Terms at any time. When we make changes, we will:</p>
+                        <ul>
+                            <li>Update the "Last Updated" date at the top of these Terms</li>
+                            <li>Post the updated Terms on this page</li>
+                            <li>Notify users of material changes via email or in-app notification</li>
+                        </ul>
+
+                        <h3>Your Acceptance</h3>
+                        <p>Your continued use of the Services after any changes to these Terms constitutes your
+                            acceptance of the new Terms. If you do not agree to the new Terms, you must stop using the
+                            Services.</p>
+
+                        <div class="warning-box">
+                            <h4><i class="fas fa-bell"></i> Notification Responsibility</h4>
+                            <p>It is your responsibility to review these Terms periodically for changes. By continuing
+                                to access or use our Services after revisions become effective, you agree to be bound by
+                                the revised Terms.</p>
+                        </div>
+                    </div>
+
+                    <!-- Agreement Section -->
+                    <div class="agreement-check">
+                        <label for="agreeTerms">
+                            <input type="checkbox" id="agreeTerms">
+                            <span>I have read, understood, and agree to be bound by these Terms and Conditions</span>
+                        </label>
+
+                        <div>
+                            <button class="accept-btn" id="acceptTerms" disabled>
+                                <i class="fas fa-check"></i> Accept Terms & Conditions
+                            </button>
+                            <button class="print-terms" id="printTerms">
+                                <i class="fas fa-print"></i> Print Terms
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Trade-<span>Wala</span></div>
+                    <p>Construction material management platform connecting dealers and users for seamless transactions
+                        and efficient inventory management.</p>
+
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="delete-account.html">Delete Account</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <div id="footerContact">
+                        <!-- Content will be loaded from JavaScript -->
+                        <p><i class="fas fa-spinner fa-spin"></i> Loading contact info...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 Trade-Wala. All rights reserved. | <a href="privacy.html"
+                        style="color: var(--secondary); text-decoration: none;">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+    <script src="./global.js"></script>
+
+    <script>
+        // Terms Acceptance Functionality
+        const agreeCheckbox = document.getElementById('agreeTerms');
+        const acceptButton = document.getElementById('acceptTerms');
+        const printButton = document.getElementById('printTerms');
+
+        // Enable/disable accept button based on checkbox
+        agreeCheckbox.addEventListener('change', function () {
+            acceptButton.disabled = !this.checked;
+        });
+
+        // Accept terms button click
+        acceptButton.addEventListener('click', function () {
+            if (agreeCheckbox.checked) {
+                alert('Thank you for accepting our Terms and Conditions. You may now proceed to use Trade-Wala services.');
+                // In a real application, you would store this acceptance in your database
+                agreeCheckbox.checked = false;
+                acceptButton.disabled = true;
+            }
+        });
+
+        // Print terms button
+        printButton.addEventListener('click', function () {
+            window.print();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.terms-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+
+                    // Update active link
+                    document.querySelectorAll('.terms-nav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Highlight current section in navigation
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.clause');
+            const navLinks = document.querySelectorAll('.terms-nav a');
+
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollY >= (sectionTop - 150)) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

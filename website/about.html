@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Trade-Wala - Construction Material Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+   <style>
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 15s infinite linear;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            top: -150px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--accent);
+            bottom: -80px;
+            left: -50px;
+            animation-delay: 5s;
+        }
+
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            background-color: white;
+            top: 50%;
+            right: 20%;
+            animation-delay: 10s;
+        }
+
+        /* About Content */
+        .page-content {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 25px auto 0;
+            font-size: 1.1rem;
+        }
+
+        /* Mission & Vision */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .mission-card, .vision-card {
+            background-color: var(--light);
+            padding: 50px 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-card:hover, .vision-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-large);
+        }
+
+        .mission-card:before, .vision-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(0, 78, 137, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--primary);
+        }
+
+        .mission-card h3, .vision-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        /* Our Story */
+        .story-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .story-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .image-frame {
+            width: 100%;
+            height: 400px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-large);
+            position: relative;
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: var(--transition);
+        }
+
+        .image-frame:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+        }
+
+        .story-content {
+            flex: 1;
+        }
+
+        .story-content h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--dark);
+        }
+
+        .story-content p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        /* Team Section */
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .team-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-large);
+        }
+
+        .team-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .team-info {
+            padding: 25px 20px;
+        }
+
+        .team-info h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .team-info p {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .team-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .team-social a:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(0, 78, 137, 0.05) 100%);
+            padding: 80px 0;
+            margin-bottom: 80px;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 30px 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-text {
+            font-size: 1.2rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        /* Values Section */
+        .values-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background-color: var(--light);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-large);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .value-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="nav-container">
+                <a href="index.html" class="logo">
+                    <img src="./assets/logo.png" height="80px" alt="Trade-Wala Logo">
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="delete-account.html">Delete Account</a></li>
+                </ul>
+                
+                <div class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container fade-in">
+            <h1>About Trade-Wala</h1>
+            <p>Revolutionizing construction material management through technology, connecting dealers and users across India with a seamless, efficient platform.</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="page-content">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Story</h2>
+                <p>Founded in 2020, Trade-Wala emerged from a simple idea: to simplify the complex world of construction material procurement and management.</p>
+            </div>
+
+            <div class="story-container">
+                <div class="story-image fade-in">
+                    <div class="image-frame">
+                        <!-- Using a construction-related placeholder image -->
+                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--secondary), var(--accent)); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; text-align: center; padding: 20px;">
+                            Building the future of construction material trade
+                        </div>
+                        <div class="image-overlay">
+                            <h4>Trade-Wala Founding Team, 2020</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-content fade-in">
+                    <h3>From Vision to Reality</h3>
+                    <p>Trade-Wala was founded by a team of construction industry veterans and technology enthusiasts who recognized the challenges faced by both material dealers and construction professionals in sourcing and managing materials.</p>
+                    <p>We noticed that the construction material industry was largely fragmented, with dealers struggling to reach customers and users facing difficulties in comparing prices, verifying quality, and ensuring timely delivery.</p>
+                    <p>Our mission became clear: create a digital platform that bridges this gap, bringing transparency, efficiency, and convenience to construction material procurement across India.</p>
+                    <p>Today, Trade-Wala serves thousands of dealers and construction professionals, facilitating millions of rupees in transactions monthly and continuously expanding our reach across the country.</p>
+                </div>
+            </div>
+
+            <!-- Mission & Vision -->
+            <div class="mission-vision">
+                <div class="mission-card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To revolutionize construction material management by creating the most efficient, transparent, and user-friendly digital marketplace that empowers dealers to grow their business and enables users to make informed purchasing decisions with ease and confidence.</p>
+                </div>
+                
+                <div class="vision-card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To become India's leading construction material management platform, recognized for transforming traditional procurement processes through innovation, technology, and exceptional user experience, ultimately contributing to the growth of India's construction industry.</p>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="container">
+                    <div class="section-title fade-in">
+                        <h2>Our Impact</h2>
+                        <p>Numbers that tell our story of growth and commitment to the construction industry.</p>
+                    </div>
+                    
+                    <div class="stats-container">
+                        <div class="stat-item fade-in">
+                            <span class="stat-number count-up" id="dealersCount">0</span>
+                            <span class="stat-text">Verified Dealers</span>
+                        </div>
+                        <div class="stat-item fade-in">
+                            <span class="stat-number count-up" id="usersCount">0</span>
+                            <span class="stat-text">Active Users</span>
+                        </div>
+                        <div class="stat-item fade-in">
+                            <span class="stat-number count-up" id="productsCount">0</span>
+                            <span class="stat-text">Products Listed</span>
+                        </div>
+                        <div class="stat-item fade-in">
+                            <span class="stat-number count-up" id="citiesCount">0</span>
+                            <span class="stat-text">Cities Served</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Values -->
+            <div class="section-title fade-in">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide everything we do at Trade-Wala.</p>
+            </div>
+            
+            <div class="values-container">
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>Trust & Transparency</h4>
+                    <p>We believe in building trust through complete transparency in pricing, product quality, and dealer verification to ensure confidence in every transaction.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h4>Innovation</h4>
+                    <p>Continuously improving our platform with cutting-edge technology to solve real problems in construction material management.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Customer Success</h4>
+                    <p>Our success is measured by the success of our dealers and users. We're committed to providing exceptional support and value.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h4>Quality Assurance</h4>
+                    <p>Ensuring every product listed meets stringent quality standards through our verification processes and dealer ratings.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4>Efficiency</h4>
+                    <p>Streamlining the procurement process to save time and reduce costs for both dealers and construction professionals.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Reliability</h4>
+                    <p>Building a platform that dealers and users can depend on for consistent, reliable service and support.</p>
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <div class="section-title fade-in" style="margin-top: 80px;">
+                <h2>Leadership Team</h2>
+                <p>The passionate individuals driving Trade-Wala's vision forward.</p>
+            </div>
+            
+            <div class="team-container">
+                <div class="team-card fade-in">
+                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="team-info">
+                        <h4>Rajesh Sharma</h4>
+                        <p>Founder & CEO</p>
+                        <p>20+ years in construction industry, technology enthusiast</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card fade-in">
+                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, var(--secondary), var(--accent)); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="team-info">
+                        <h4>Priya Patel</h4>
+                        <p>CTO</p>
+                        <p>Former tech lead at major e-commerce platform, full-stack expert</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card fade-in">
+                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #FF6B35, #FF8E53); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="team-info">
+                        <h4>Amit Kumar</h4>
+                        <p>Head of Operations</p>
+                        <p>Supply chain specialist with construction industry expertise</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card fade-in">
+                    <div style="width: 100%; height: 250px; background: linear-gradient(135deg, var(--accent), #00C9A7); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="team-info">
+                        <h4>Anjali Mehta</h4>
+                        <p>Head of Customer Success</p>
+                        <p>Customer experience expert with background in B2B platforms</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Trade-<span>Wala</span></div>
+                    <p>Construction material management platform connecting dealers and users for seamless transactions and efficient inventory management.</p>
+                    
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="delete-account.html">Delete Account</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <div id="footerContact">
+                        <!-- Content will be loaded from JavaScript -->
+                        <p><i class="fas fa-spinner fa-spin"></i> Loading contact info...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Trade-Wala. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+     <script src="./script.js"></script>
+     <script src="./global.js"></script>
+    <script>
+        // Count-up animation for stats
+        function animateCount(elementId, finalValue, duration = 2000) {
+            const element = document.getElementById(elementId);
+            let startValue = 0;
+            const increment = finalValue / (duration / 16); // 60fps
+            
+            const timer = setInterval(() => {
+                startValue += increment;
+                if (startValue >= finalValue) {
+                    element.textContent = finalValue.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(startValue).toLocaleString();
+                }
+            }, 16);
+        }
+        
+        // Fade-in animation on scroll
+        // const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                    
+                    // Trigger count-up animations when stats section is visible
+                    if (element.classList.contains('stat-item') && !element.dataset.animated) {
+                        element.dataset.animated = 'true';
+                        
+                        // Animate each stat with different values
+                        if (element.querySelector('#dealersCount')) {
+                            setTimeout(() => animateCount('dealersCount', 1250), 200);
+                        }
+                        if (element.querySelector('#usersCount')) {
+                            setTimeout(() => animateCount('usersCount', 5200), 400);
+                        }
+                        if (element.querySelector('#productsCount')) {
+                            setTimeout(() => animateCount('productsCount', 8500), 600);
+                        }
+                        if (element.querySelector('#citiesCount')) {
+                            setTimeout(() => animateCount('citiesCount', 42), 800);
+                        }
+                    }
+                }
+            });
+        };
+        
+        // Set initial state for fade elements
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+        
+        // Check on load and scroll
+        window.addEventListener('load', fadeOnScroll);
+        window.addEventListener('scroll', fadeOnScroll);
+        
+        // Initialize stats with 0 values
+        document.getElementById('dealersCount').textContent = '0';
+        document.getElementById('usersCount').textContent = '0';
+        document.getElementById('productsCount').textContent = '0';
+        document.getElementById('citiesCount').textContent = '0';
+    </script>
+</body>
+</html>

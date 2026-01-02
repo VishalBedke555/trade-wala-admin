@@ -1,6 +1,8 @@
 {
-  "hosting": {
+  "hosting": [
+    {
     "public": "admin",
+    "target": "admin",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -12,5 +14,21 @@
         "destination": "/index.html"
       }
     ]
-  }
+  },
+   {
+      "public": "website",
+      "target": "website",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
 }
